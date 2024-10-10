@@ -50,7 +50,7 @@ console.log (crazyDiff(10));
 
 /* SCRIVI QUI LA TUA RISPOSTA */
 function boundary (n) {
-    return ((n>20) && (n<=100) || (n === 400));   
+    return ((n>=20) && (n<=100) || (n === 400));   
 }
 console.log(boundary(20));
 console.log(boundary(400));
@@ -65,7 +65,7 @@ console.log(boundary(50));
 
 /* SCRIVI QUI LA TUA RISPOSTA */
 function epify (parameter) {
-    if (parameter.startsWith ("EPICODE")) {
+    if (parameter.toUpperCase().startsWith ("EPICODE")) {
         return parameter;
     } else { 
        return "EPICODE"+ parameter;
@@ -108,9 +108,22 @@ console.log(reverseString("EPICODE!"));
 
 /* SCRIVI QUI LA TUA RISPOSTA */
 function upperFirst (phrase) {
-    return phrase.split("").
+    const stringWords = phrase.split("");
+    console.log(stringWords);
+    const sentence = [];
+    for (let i =0; i <stringWords.lenght; i++){
+        const singleword= stringWords[i]
+        const firstLetter =  singleword.charAt(0).toUpperCase();
+        console.log(firstLetter);
+        const remainLet = singleword.slice(1);
+        console.log(remainLet);
+        const fullWord = firstLetter.concat(remainLett);
+        sentence.push(fullWord); 
 }
-console.log(upperFirst("eleonora"));
+}
+return sentence.join ("");
+
+console.log(upperFirst("hello epicode my name is eleonora"));
 
 /* ESERCIZIO 9
  Scrivi una funzione di nome "cutString", che riceve come parametro una stringa. La funzione deve creare una nuova stringa senza il primo e l'ultimo carattere
